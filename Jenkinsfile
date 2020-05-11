@@ -11,5 +11,11 @@ pipeline {
         sh 'npm install'
       }
     }
+    stage('Development') {
+      steps {
+          sh './jenkins/scripts/deliver.sh'
+          sh './jenkins/scripts/kill.sh'
+      }
+    }
   }
 }
